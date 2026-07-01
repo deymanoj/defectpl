@@ -1,0 +1,145 @@
+/* ─────────────────────────────────────────────────────────
+   DefectPL custom stylesheet
+   ───────────────────────────────────────────────────────── */
+
+/* Slightly larger base font for body text */
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.7;
+}
+
+/* Make equation blocks stand out slightly */
+.arithmatex {
+  overflow-x: auto;
+  padding: 0.4em 0;
+}
+
+/* API reference: mono font for parameter names */
+.doc-heading code,
+.doc-label code {
+  font-size: 0.85em;
+}
+
+/* Admonition title padding */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 4px;
+}
+
+/* Hero section on landing page */
+.hero {
+  padding: 3rem 0 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+  max-width: 620px;
+  margin: 0 auto 1.6rem;
+}
+
+/* Badge row */
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* ─────────────────────────────────────────────────────────
+   Logo variants per color scheme
+   ───────────────────────────────────────────────────────── */
+
+/* Header logo: horizontal wordmark — light in light mode, reverse in dark mode.
+   overrides/partials/logo.html renders both <img> tags; CSS toggles visibility.
+   !important ensures these rules beat any Material internal display:block rule. */
+.md-logo .logo-dark-mode {
+  display: none !important;
+}
+
+.md-logo .logo-light-mode {
+  display: block !important;
+}
+
+[data-md-color-scheme="slate"] .md-logo .logo-light-mode {
+  display: none !important;
+}
+
+[data-md-color-scheme="slate"] .md-logo .logo-dark-mode {
+  display: block !important;
+}
+
+/* The horizontal logo embeds the wordmark — suppress the duplicate site-name text */
+.md-header__title .md-header__topic:first-child {
+  display: none;
+}
+
+/* Expand the header to fit a larger wordmark logo */
+.md-header__inner {
+  height: 4rem;
+}
+
+/* Large horizontal wordmark — let the SVG scale to its natural aspect ratio */
+.md-logo img {
+  height: 3rem !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* Landing page hero logo */
+.hero-logo {
+  display: block;
+  margin: 0 auto 1.8rem;
+  max-width: 420px;
+  width: 80%;
+}
+
+/* Hero: horizontal-color in light mode, horizontal-reverse in dark mode */
+.hero-logo-light {
+  display: block;
+}
+
+.hero-logo-dark {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .hero-logo-light {
+  display: none;
+}
+
+[data-md-color-scheme="slate"] .hero-logo-dark {
+  display: block;
+}
+
+/* Feature grid on landing page */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 6px;
+  padding: 1.1rem 1.2rem;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.feature-card p {
+  margin-bottom: 0;
+  font-size: 0.82rem;
+  opacity: 0.85;
+}
